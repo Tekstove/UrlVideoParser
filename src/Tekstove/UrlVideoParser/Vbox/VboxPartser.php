@@ -1,28 +1,25 @@
 <?php
 
-namespace Tekstove\UrlVideoParser\Youtube;
+namespace Tekstove\UrlVideoParser\Vbox;
 
 use Tekstove\UrlVideoParser\ParserInterface;
 
 /**
- * Parse urls from www.youtube.com
+ * parse urls from www.vbox7.com
  *
  * @author po_taka <angel.koilov@gmail.com>
  */
-class YoutubeParser implements ParserInterface
+class VboxPartser implements ParserInterface
 {
-
-    private $validVideoIdRegExp = '[a-zA-Z0-9\-_]{5,}';
+    private $validVideoIdRegExp = '[a-zA-Z0-9]+';
     
     public function getId($url)
     {
         $matches = null;
         
         $checks = [
-            "~v\/({$this->validVideoIdRegExp})~iu",
-            "~\\?v\=({$this->validVideoIdRegExp})~iu",
-            "~\\.be/({$this->validVideoIdRegExp})~iu",
-            "~\\/embed\/({$this->validVideoIdRegExp})['\"]~iu",
+            "|play\:({$this->validVideoIdRegExp})|iu",
+            "|vid=({$this->validVideoIdRegExp})|iu",
         ];
         
         foreach ($checks as $check) {
