@@ -1,6 +1,7 @@
 {
     "name": "tekstove/url-video-parser",
     "description": "parse video links",
+    "license": "MIT",
     "require": {
         "php": ">=5.6.0"
     },
