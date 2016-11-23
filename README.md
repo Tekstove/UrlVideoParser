@@ -1,3 +1,6 @@
+# Builds
+[![Build Status](https://travis-ci.org/Tekstove/UrlVideoParser.svg?branch=master)](https://travis-ci.org/Tekstove/UrlVideoParser)
+
 # UrlVideoParser
 
 Active development. Will have stable and tested version soon (week or two)
