@@ -1,0 +1,20 @@
+language: php
+php:
+  - 7.0
+  - 5.6
+  - 5.5
+  
+before_script:
+  - phpenv rehash
+
+script:
+    - composer install --prefer-dist
+    - vendor/bin/phpunit -c test/phpUnit/phpunit.xml --no-coverage 
+
+matrix:
+    allow_failures:
+        - php: 5.5
+
+notifications:
+    on_success: never
+    on_failure: always
