@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use Tekstove\UrlVideoParser\Youtube\YoutubeParser;
+use Tekstove\UrlVideoParser\Youtube\YoutubeException;
 
 /**
  * @author po_taka <angel.koilov@gmail.com>
@@ -22,5 +23,12 @@ class YoutubeParserTest extends TestCase
         
         $embedUrl1 = '<iframe width="560" height="315" src="https://www.youtube.com/embed/z7ODF3A0HhE" frameborder="0" allowfullscreen></iframe>';
         $this->assertSame('z7ODF3A0HhE', $parser->getId($embedUrl1));
+    }
+    
+    public function testFailure()
+    {
+        $this->expectException(YoutubeException::class);
+        $parser = new YoutubeParser();
+        $parser->getId("There is no video url here");
     }
 }
