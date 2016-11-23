@@ -3,6 +3,7 @@
 namespace Tekstove\UrlVideoParser\Vbox;
 
 use Tekstove\UrlVideoParser\ParserInterface;
+use Tekstove\UrlVideoParser\Vbox\VboxException;
 
 /**
  * parse urls from www.vbox7.com

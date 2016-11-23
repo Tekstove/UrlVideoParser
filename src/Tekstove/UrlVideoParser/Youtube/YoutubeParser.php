@@ -3,6 +3,7 @@
 namespace Tekstove\UrlVideoParser\Youtube;
 
 use Tekstove\UrlVideoParser\ParserInterface;
+use Tekstove\UrlVideoParser\Youtube\YoutubeException;
 
 /**
  * Parse urls from www.youtube.com
