@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Tekstove\UrlVideoParser\Vbox\VboxPartser;
+use Tekstove\UrlVideoParser\Vbox\VboxParser;
 use Tekstove\UrlVideoParser\Vbox\VboxException;
 
 /**
@@ -11,7 +11,7 @@ class VboxParserTest extends TestCase
 {
     public function testParse()
     {
-        $parser = new VboxPartser();
+        $parser = new VboxParser();
         
         // play:
         $this->assertSame('676723260d', $parser->getId('https://www.vbox7.com/play:676723260d?pos=pop'));
@@ -25,7 +25,7 @@ class VboxParserTest extends TestCase
     public function testFailure()
     {
         $this->expectException(VboxException::class);
-        $parser = new VboxPartser();
+        $parser = new VboxParser();
         $parser->getId("There is no video url here");
     }
 }

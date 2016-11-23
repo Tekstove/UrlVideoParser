@@ -10,7 +10,7 @@ use Tekstove\UrlVideoParser\Vbox\VboxException;
  *
  * @author po_taka <angel.koilov@gmail.com>
  */
-class VboxPartser implements ParserInterface
+class VboxParser implements ParserInterface
 {
     private $validVideoIdRegExp = '[a-zA-Z0-9]+';
     
